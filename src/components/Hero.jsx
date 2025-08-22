@@ -19,40 +19,41 @@ const Hero = ({searchTerm}) => {
     return (
         <>
             <main className="bg-body-secondary h-100 py-5">
-
-                <div className="d-flex justify-content-between container">
-                    <div className="">
-                        <h1>Meetup Events</h1>
+                <div className="container">
+                    <div className="row align-items-center">
+                    <div className="col-12 col-md-6">
+                        <h1 className="text-center text-md-start">Meetup Events</h1>
                     </div>
-                    <div className="">
-                        <select onChange={(e) => setEventFilter(e.target.value)} className="p-2 rounded-3 px-4 text-secondary">
-                            <option value="All" >Select Event Type</option>
-                            <option value="Offline" >Offline</option>
-                            <option value="Online" >Online</option>
-                            <option value="Both" >Both</option>
+                    <div className="col-12 col-md-6 mt-3 mt-md-0 text-center text-md-end">
+                        <select onChange={(e) => setEventFilter(e.target.value)} className="p-2 rounded-3 px-4 text-secondary w-100 w-md-auto">
+                        <option value="All">Select Event Type</option>
+                        <option value="Offline">Offline</option>
+                        <option value="Online">Online</option>
+                        <option value="All">Both</option>
                         </select>
                     </div>
-                </div>
-
-                <div className="container mt-4">
-                    <div className="row">
-                        {data ? finalFilteredData.map((event) => (
-                                <div key={event._id} className="col-lg-3 mx-5 my-4 p-0 card shadow lift-card-dramatic h-100">
-                                    <img src={event.eventImageUrl} className="card-img-top" alt="eventImg" />
-                                    <div className='card-img-overlay text-primary fw-bold fs-5'>{event.eventType}</div>
-                                    <div className="card-body">
-                                        <p className="text-secondary">{event.dateTime}</p>
-                                        <p className='fw-bold fs-5'>{event.title}</p>
-                                        <Link to={`/events/${event._id}`} className="stretched-link"></Link>
-                                    </div>
-                                </div>
-                        )) : loading && (<p>Loading...</p>) }
                     </div>
-                    
 
+                    <div className="row mt-4 g-4">
+                    {data ? (
+                        finalFilteredData.map((event) => (
+                        <div key={event._id} className="col-12 col-sm-6 col-lg-4 col-xl-4 d-flex">
+                            <div className="card shadow lift-card-dramatic w-100">
+                            <img src={event.eventImageUrl} className="card-img-top" alt="eventImg"/>
+                            <div className="card-img-overlay text-primary bg-light fw-bold fs-6" style={{width: "100px", height: "35px", margin: "8px", paddingTop: "2px",}}>
+                                {event.eventType}
+                            </div>
+                            <div className="card-body">
+                                <p className="text-secondary">{event.dateTime}</p>
+                                <p className="fw-bold fs-5">{event.title}</p>
+                                <Link to={`/events/${event._id}`} className="stretched-link"></Link>
+                            </div>
+                            </div>
+                        </div>))) : (loading && <p>Loading...</p>)}
+                    </div>
                 </div>
-
             </main>
+
         </>
     )
 }
