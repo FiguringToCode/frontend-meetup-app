@@ -10,7 +10,7 @@ const EventDetails = () => {
     const event_Id = eventId.eventId
     // console.log(event_Id)
 
-    const {data, loading, error} = useFetch(`https://backend-meetup-app-nine.vercel.app/${event_Id}`)
+    const {data, loading, error} = useFetch(`https://backend-meetup-app-nine.vercel.app/events/${event_Id}`)
     console.log(data)
     
 
