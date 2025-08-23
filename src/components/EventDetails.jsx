@@ -38,7 +38,7 @@ const EventDetails = () => {
                             </div>
                         </div>
 
-                        <div className="col-12 col-lg-4 mt-4 mt-lg-0 mx-auto">
+                        <div className="col-12 col-lg-4 mt-4 mt-lg-0 mar-left mar-auto">
                             <div className="row bg-light p-3 rounded-3 shadow-sm my-5">
                                 <div className="col-12 d-flex align-items-center gap-3 mt-2">
                                     <Clock />
