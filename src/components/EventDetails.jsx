@@ -38,34 +38,34 @@ const EventDetails = () => {
                             </div>
                         </div>
 
-                        <div className="col-12 col-lg-4 mt-4 mt-lg-0 ms-lg-5">
-                            <div className="row bg-light p-3 rounded-3 shadow-sm mx-0">
-                            <div className="col-12 d-flex align-items-center gap-3 mt-2">
-                                <Clock />
-                                <p className="text-secondary mb-0">{data.eventDetail[0].dateTime} PM</p>
-                            </div>
-                            <div className="col-12 d-flex align-items-center gap-3 mt-2">
-                                <MapPin />
-                                <p className="text-secondary mb-0">{data.eventDetail[0].venue.name},  {data.eventDetail[0].venue.address}</p>
-                            </div>
-                            <div className="col-12 d-flex align-items-center gap-3 mt-2">
-                                <IndianRupeeIcon />
-                                <p className="text-secondary mb-0">{data.eventDetail[0].entryPrice}</p>
-                            </div>
+                        <div className="col-12 col-lg-4 mt-4 mt-lg-0 mx-auto">
+                            <div className="row bg-light p-3 rounded-3 shadow-sm my-5">
+                                <div className="col-12 d-flex align-items-center gap-3 mt-2">
+                                    <Clock />
+                                    <p className="text-secondary mb-0">{data.eventDetail[0].dateTime} PM</p>
+                                </div>
+                                <div className="col-12 d-flex align-items-center gap-3 mt-2">
+                                    <MapPin />
+                                    <p className="text-secondary mb-0">{data.eventDetail[0].venue.name},  {data.eventDetail[0].venue.address}</p>
+                                </div>
+                                <div className="col-12 d-flex align-items-center gap-3 mt-2">
+                                    <IndianRupeeIcon />
+                                    <p className="text-secondary mb-0">{data.eventDetail[0].entryPrice}</p>
+                                </div>
                             </div>
 
-                            <div className="mt-4">
+                            <div className="my-5">
                                 <h2 className="fs-5 fw-bold">Speakers: {data.eventDetail[0].speakerDetails[0].speakerName}</h2>
                                 <img src={data.eventDetail[0].speakerDetails[0].photo} alt="speakerPhoto" className="border rounded-5 img-fluid w-50" />
                             </div>
 
-                            <div className="mt-5">
+                            <div className="my-5">
                                 <h2 className="fs-5 fw-bold">Additional Information:</h2>
                                 <p><b>Dress Code:</b> {data.eventDetail[0].dressCode}</p>
                                 <p><b>Age Restrictions:</b> 18 and above</p>
                             </div>
 
-                            <div className="mt-5">
+                            <div className="my-5">
                             <h2 className="fs-4 fw-bold">Event Tags:</h2>
                             {data.eventDetail[0].eventTags.map((tag, i) => (
                                 <button key={i} className="btn btn-danger me-2 mb-2 px-3">{tag}</button>
