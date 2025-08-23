@@ -51,8 +51,16 @@
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2) !important;
 }
 
-.mar-left{
-  margin-left: 10rem;
+@media (min-width: 1400px) {
+  .mar-left{
+    margin-left: 13rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 1399px) {
+  .mar-auto{
+    margin-left: auto;
+  }
 }
 
 .mar-top{
