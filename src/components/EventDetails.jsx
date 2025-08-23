@@ -55,7 +55,7 @@ const EventDetails = () => {
                             </div>
 
                             <div className="my-5">
-                                <h2 className="fs-5 fw-bold">Speakers: {data.eventDetail[0].speakerDetails[0].speakerName}</h2>
+                                <h2 className="fs-5 fw-bold">Speaker: {data.eventDetail[0].speakerDetails[0].speakerName}</h2>
                                 <img src={data.eventDetail[0].speakerDetails[0].photo} alt="speakerPhoto" className="border rounded-5 img-fluid w-50" />
                             </div>
 
